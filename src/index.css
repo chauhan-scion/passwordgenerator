@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Animations (optional if not added in tailwind.config.js) */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* If you didn’t add this in tailwind.config.js, you can apply it via utility class here */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+/* Optional — Customize scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #718096;
+  border-radius: 4px;
+}
+
+/* Optional global body styling */
+body {
+  @apply bg-gray-900 text-white font-sans antialiased;
+}
